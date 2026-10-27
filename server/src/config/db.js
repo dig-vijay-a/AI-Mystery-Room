@@ -4,6 +4,7 @@ export async function connectDB() {
   const uri = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/ai_mystery_room';
   try {
     const conn = await mongoose.connect(uri, {
+      dbName: 'ai_mystery_room',
       serverSelectionTimeoutMS: 5000,
     });
     console.log(`[MongoDB] Connected successfully to host: ${conn.connection.host}`);
